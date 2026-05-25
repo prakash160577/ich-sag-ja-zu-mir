@@ -279,6 +279,17 @@
     color: var(--mist);
     line-height: 1.7;
   }
+    .book-link {
+          display: inline-block;
+          margin-top: 1rem;
+          color: var(--earth);
+          text-decoration: none;
+          font-size: 0.85rem;
+          letter-spacing: 0.05em;
+          border-bottom: 1px solid var(--earth);
+          transition: opacity 0.2s;
+    }
+    .book-link:hover { opacity: 0.7; }
 
   .chatbot-section {
     background: var(--warm);
@@ -484,7 +495,7 @@
 <!-- BÜCHER -->
 <section class="books-section" id="buecher">
   <span class="section-label">Die Buchreihe</span>
-  <h2 class="section-title">Drei Wege in<br>denselben Raum</h2>
+  <h2 class="section-title">Unsere Bücher</h2>
   <p class="section-intro">
     Jedes Buch nähert sich dem gleichen Ort auf einem anderen Weg. Kein Programm, keine Übungen — nur Selbstwahrnehmung.
   </p>
@@ -494,27 +505,20 @@
     <!-- BUCH 01 – GEÄNDERTE ZUSAMMENFASSUNG -->
     <div class="book-card">
       <div class="book-number">01</div>
-      <span class="book-tag">Einstieg über Umdenken</span>
-      <h3 class="book-title">Du entscheidest</h3>
-      <p class="book-subtitle">Der vergessene Moment</p>
+      <span class="book-tag">Buch 1 – Mindfulness</span>
+      <h3 class="book-title">Nur ein Moment</h3>
+      <a href="https://www.amazon.de/dp/B0H1ZXCDG1" target="_blank" class="book-link">Auf Amazon ansehen →</a>
       <p class="book-desc">„Ich muss" ist die Lieblingsformel des Gehirns. Aber stimmt sie? Dieses Buch zeigt, warum fast jedes „Ich muss" eigentlich ein „Ich entscheide" ist — und was passiert, wenn du das merkst.</p>
     </div>
 
     <div class="book-card">
       <div class="book-number">02</div>
-      <span class="book-tag">Einstieg über den Schmerz</span>
-      <h3 class="book-title">Schmerz endet</h3>
-      <p class="book-subtitle">Leiden ist eine Wahl</p>
-      <p class="book-desc">Was bleibt, wenn der Schmerz vorbeizieht? Das Leiden, das wir selbst verlängern. Und die Freiheit, damit aufzuhören.</p>
+      <span class="book-tag">Buch 2 – Innere Stille</span>
+      <h3 class="book-title">Stille ist ein Raum in Dir</h3>
+      <a href="https://www.amazon.de/dp/B0H2QCB195" target="_blank" class="book-link">Auf Amazon ansehen →</a>
+      <p class="book-desc">Stille ist kein Ort, den man aufsucht — sie ist ein Raum, der schon in dir ist. Dieses Buch hilft dir, ihn zu finden.</p>
     </div>
 
-    <div class="book-card">
-      <div class="book-number">03</div>
-      <span class="book-tag">Einstieg über die Stille</span>
-      <h3 class="book-title">Stille</h3>
-      <p class="book-subtitle">Innere Stille als Eingang</p>
-      <p class="book-desc">In der Stille hörst du, was unter dem Lärm immer schon da war. Dich selbst. Und den Raum, in dem alles möglich wird.</p>
-    </div>
 
   </div>
 </section>
