@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deine 3 Übungen für deinen Moment – Kostenlose PDF</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:    #faf8f4;
+      --cream2:   #f2ede6;
+      --brown:    #3d2e1e;
+      --brown-mid:#6b5040;
+      --gold:     #8b6f47;
+      --gold-light:#c4a882;
+      --text:     #4a3728;
+    }
+
+    html, body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Hintergrund-Gradient wie Homepage ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 15% 80%, rgba(180,140,100,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 85% 20%, rgba(200,170,130,0.10) 0%, transparent 55%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.4rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(250,248,244,0.85);
+      backdrop-filter: blur(8px);
+    }
+    nav a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--brown-mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--gold); }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--brown-mid);
+    }
+
+    /* ── Trennlinie ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      justify-content: center;
+      margin: 2rem 0;
+      opacity: 0.35;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .divider span { color: var(--gold); font-size: 0.55rem; }
+
+    /* ── Hero-Bereich ── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 7rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .eyebrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.2s forwards;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.25;
+      color: var(--brown);
+      max-width: 680px;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.4s forwards;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--brown-mid);
+      max-width: 520px;
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.6s forwards;
+    }
+
+    /* ── Vorteile ── */
+    .benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      margin: 1.8rem 0 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.8s forwards;
+    }
+    .benefit {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--brown-mid);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      justify-content: center;
+    }
+    .benefit::before {
+      content: '◆';
+      font-size: 0.4rem;
+      color: var(--gold-light);
+      flex-shrink: 0;
+    }
+
+    /* ── Formular-Container ── */
+    .form-wrap {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 560px;
+      background: rgba(255,253,250,0.75);
+      border: 1px solid rgba(139,111,71,0.18);
+      border-radius: 2px;
+      padding: 0;
+      overflow: hidden;
+      box-shadow:
+        0 2px 30px rgba(61,46,30,0.07),
+        0 1px 0 rgba(139,111,71,0.12) inset;
+      opacity: 0;
+      animation: fadeUp 0.9s ease 1.0s forwards;
+    }
+
+    .form-wrap iframe {
+      display: block;
+      width: 100%;
+      height: 340px;
+      border: none;
+      background: transparent;
+    }
+
+    /* Required Fields ausblenden via CSS-Overlay nicht möglich in iframe —
+       stattdessen eigenes Formular-Label darunter */
+    .form-note {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--gold-light);
+      text-align: center;
+      padding: 0.5rem 1rem 1rem;
+      font-style: italic;
+    }
+
+    /* ── Vertrauen-Zeile ── */
+    .trust {
+      margin-top: 1.6rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 1.2s forwards;
+    }
+
+    /* ── Unten: Buch-Hinweis ── */
+    .book-hint {
+      position: relative;
+      z-index: 1;
+      padding: 4rem 2rem 5rem;
+      text-align: center;
+      border-top: 1px solid rgba(139,111,71,0.12);
+      margin-top: 3rem;
+    }
+    .book-hint .eyebrow { opacity: 1; animation: none; margin-bottom: 1rem; }
+    .book-hint p {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--brown-mid);
+      max-width: 480px;
+      margin: 0 auto 1.6rem;
+    }
+    .book-hint a {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(139,111,71,0.35);
+      padding-bottom: 2px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .book-hint a:hover { color: var(--brown); border-color: var(--brown); }
+
+    /* ── Animationen ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 600px) {
+      nav { padding: 1.2rem 1.4rem; }
+      .hero { padding: 6rem 1.4rem 3rem; }
+      .form-wrap { max-width: 100%; }
+      .form-wrap iframe { height: 360px; }
+      .divider::before, .divider::after { width: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="nav-logo">Ich sag Ja zu mir</span>
+    <a href="https://ich-sag-ja-zu-mir.de">← Zurück zur Website</a>
+  </nav>
+
+  <section class="hero">
+
+    <p class="eyebrow">Kostenlose PDF · Sofort-Download</p>
+
+    <h1>Deine 3 Übungen<br>für <em>deinen Moment</em></h1>
+
+    <p class="subtitle">
+      Drei kurze Achtsamkeits-Übungen, die du sofort anwenden kannst —
+      wann immer du eine Pause brauchst.
+    </p>
+
+    <div class="divider"><span>✦</span></div>
+
+    <div class="benefits">
+      <div class="benefit">Sofort anwendbar — auch zwischendurch</div>
+      <div class="benefit">Passend zu Band 1: „Nur ein Moment"</div>
+      <div class="benefit">Kostenlos & ohne Verpflichtung</div>
+    </div>
+
+    <div class="form-wrap">
+      <iframe
+        frameborder="0"
+        id="iframewin"
+        src="https://zcv2-zcmp.maillist-manage.eu/ua/Optin?od=12ba7f409329&zx=14ae46b658&tD=13e0489943b3e539&sD=13e0489943b3f8c8">
+      </iframe>
+      <p class="form-note">Kein Spam. Abmeldung jederzeit möglich.</p>
+    </div>
+
+    <p class="trust">Bereits über 2 Bücher auf Amazon · Andi Kendlinger</p>
+
+  </section>
+
+  <section class="book-hint">
+    <p class="eyebrow">Die Buchreihe</p>
+    <p>
+      Die PDF ist ein erster Schritt.<br>
+      Wer tiefer gehen möchte, findet in „Nur ein Moment"<br>
+      den ganzen Raum dafür.
+    </p>
+    <a href="https://ich-sag-ja-zu-mir.de#bücher">Zur Buchreihe →</a>
+  </section>
+
+</body>
+</html>
